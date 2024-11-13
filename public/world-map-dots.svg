@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="600" viewBox="0 0 1200 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g fill="#6366F1">
+    <!-- North America -->
+    <circle cx="250" cy="200" r="3" />
+    <circle cx="270" cy="180" r="3" />
+    <circle cx="290" cy="220" r="3" />
+    <circle cx="310" cy="190" r="3" />
+    <circle cx="330" cy="210" r="3" />
+    
+    <!-- South America -->
+    <circle cx="350" cy="400" r="3" />
+    <circle cx="370" cy="380" r="3" />
+    <circle cx="390" cy="420" r="3" />
+    <circle cx="410" cy="390" r="3" />
+    
+    <!-- Europe -->
+    <circle cx="600" cy="180" r="3" />
+    <circle cx="620" cy="160" r="3" />
+    <circle cx="640" cy="200" r="3" />
+    <circle cx="660" cy="170" r="3" />
+    <circle cx="680" cy="190" r="3" />
+    
+    <!-- Africa -->
+    <circle cx="600" cy="300" r="3" />
+    <circle cx="620" cy="320" r="3" />
+    <circle cx="640" cy="280" r="3" />
+    <circle cx="660" cy="310" r="3" />
+    
+    <!-- Asia -->
+    <circle cx="800" cy="200" r="3" />
+    <circle cx="820" cy="180" r="3" />
+    <circle cx="840" cy="220" r="3" />
+    <circle cx="860" cy="190" r="3" />
+    <circle cx="880" cy="210" r="3" />
+    
+    <!-- Australia -->
+    <circle cx="900" cy="400" r="3" />
+    <circle cx="920" cy="380" r="3" />
+    <circle cx="940" cy="420" r="3" />
+    <circle cx="960" cy="390" r="3" />
+  </g>
+  
+  <!-- Connection lines -->
+  <path d="M250,200 C400,150 600,250 800,200" stroke="#6366F1" stroke-width="1" stroke-opacity="0.3" fill="none"/>
+  <path d="M350,400 C500,350 700,450 900,400" stroke="#6366F1" stroke-width="1" stroke-opacity="0.3" fill="none"/>
+  <path d="M600,180 C700,160 800,200 900,180" stroke="#6366F1" stroke-width="1" stroke-opacity="0.3" fill="none"/>
+</svg>
