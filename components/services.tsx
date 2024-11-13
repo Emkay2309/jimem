@@ -57,7 +57,7 @@ export default function Services() {
                       src={service.image}
                       alt={service.title}
                       className="absolute inset-0 w-full h-full object-cover"
-                      onError={(e) => { e.target.style.display = 'none'; }}
+                      onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                     />
                   </div>
                   <h3 className="text-xl text-black font-semibold mb-3">{service.title}</h3>
