@@ -53,7 +53,7 @@ export default function Reviews() {
   };
 
   return (
-    <section className="py-24 bg-[#14142B] relative overflow-hidden">
+    <section id="reviews"   className="py-24 bg-[#14142B] relative overflow-hidden">
       <div className="container mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

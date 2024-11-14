@@ -68,7 +68,7 @@ export default function VideoScroll() {
   ];
 
   return (
-    <section className="py-24 px-12 bg-white overflow-hidden">
+    <section id="destinations"  className="py-24 px-12 bg-white overflow-hidden">
       <div className="relative w-full overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-16">
           <motion.div
