@@ -2,27 +2,44 @@
 
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
+import { Calendar, Users, Mic, PartyPopper, Gift, Camera } from 'lucide-react';
 
 const services = [
   {
-    title: 'Offsite Planning',
-    description: 'Specializing in unique and engaging offsites, we tailor every detail to fit your team\'s needs.',
-    image: 'https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?fit=crop&w=800'
-  },
-  {
     title: 'Corporate Events',
-    description: 'Whether it\'s team building, product launches, sales summits, or company celebrations, we bring your corporate vision to life.',
-    image: 'https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?fit=crop&w=800'
+    description: 'From product launches to sales summits and company celebrations, we bring your corporate vision to life with meticulous attention to detail.',
+    image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800',
+    icon: <Users className="w-6 h-6" />
   },
   {
     title: 'Conferences',
-    description: 'We handle all aspects, from venue selection to technology setup, ensuring your conference runs smoothly.',
-    image: 'https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?fit=crop&w=800'
+    description: 'Professional conference planning from venue selection to technology setup, ensuring your event runs seamlessly.',
+    image: 'https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?auto=format&fit=crop&w=800',
+    icon: <Mic className="w-6 h-6" />
   },
   {
-    title: 'Workshops',
-    description: 'Our team organizes tailored workshops that foster skills development, team bonding, and growth for all participants.',
-    image: 'https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?fit=crop&w=800'
+    title: 'Team Building',
+    description: 'Creative and engaging activities that foster collaboration, strengthen bonds, and enhance team dynamics.',
+    image: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800',
+    icon: <Calendar className="w-6 h-6" />
+  },
+  {
+    title: 'Private Parties',
+    description: 'Spectacular private events that create lasting memories, from intimate gatherings to grand celebrations.',
+    image: 'https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=800',
+    icon: <PartyPopper className="w-6 h-6" />
+  },
+  {
+    title: 'Wedding Planning',
+    description: 'Turn your dream wedding into reality with our comprehensive planning and coordination services.',
+    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800',
+    icon: <Gift className="w-6 h-6" />
+  },
+  {
+    title: 'Photography & Video',
+    description: 'Professional documentation of your events with stunning photography and cinematic videography.',
+    image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800',
+    icon: <Camera className="w-6 h-6" />
   }
 ];
 
@@ -38,7 +55,9 @@ export default function Services() {
           className="text-center mb-20"
         >
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">Discover our range of tailored event planning services</p>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Discover our comprehensive range of event planning services tailored to your needs
+          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -48,22 +67,36 @@ export default function Services() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.2 }}
+              transition={{ delay: index * 0.1 }}
             >
-              <Card className="shadow-lg transition-shadow border-none">
-                <CardContent className="p-6 bg-white overflow-hidden">
-                  <div className="relative mb-6 h-48 w-full bg-gray-200">
-                    <img 
-                      src={service.image}
-                      alt={service.title}
-                      className="absolute inset-0 w-full h-full object-cover"
-                      onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-                    />
-                  </div>
-                  <h3 className="text-xl text-black font-semibold mb-3">{service.title}</h3>
-                  <p className="text-gray-600">{service.description}</p>
-                </CardContent>
-              </Card>
+              <motion.div
+                whileHover={{ y: -10 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <Card className="group overflow-hidden border-none shadow-lg hover:shadow-2xl transition-all duration-300">
+                  <CardContent className="p-0">
+                    <div className="relative h-48 overflow-hidden">
+                      <motion.img 
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <div className="absolute top-4 right-4 bg-white/90 p-2 rounded-full shadow-lg transform -translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                        {service.icon}
+                      </div>
+                    </div>
+                    <div className="p-6 bg-white">
+                      <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors duration-300">
+                        {service.title}
+                      </h3>
+                      <p className="text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
+                        {service.description}
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
             </motion.div>
           ))}
         </div>

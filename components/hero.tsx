@@ -8,10 +8,10 @@ import LocationMarker from './location-marker';
 export default function Hero() {
   return (
     <section className="relative min-h-screen hero-gradient overflow-hidden pt-16">
-      {/* Floating Location Markers */}
-      <LocationMarker className="absolute top-1/4 right-1/4" delay={0} />
-      <LocationMarker className="absolute top-1/2 left-1/4" delay={0.5} />
-      <LocationMarker className="absolute bottom-1/4 right-1/3" delay={1} />
+      {/* Floating Location Markers - Repositioned for visibility */}
+      <LocationMarker className="absolute top-32 right-[15%] z-10" delay={0} />
+      <LocationMarker className="absolute top-[60%] left-[10%] z-10" delay={0.5} />
+      <LocationMarker className="absolute bottom-32 right-[30%] z-10" delay={1} />
 
       <div className="container mx-auto px-4 pt-32 pb-16">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -26,7 +26,7 @@ export default function Hero() {
               Made Seamless
             </h1>
             <p className="text-xl text-gray-100 mb-8 max-w-xl">
-              Plan Your Next Offsite or Event with Ease! Let Offsiteio Handle Everything – From Location
+              Plan Your Next Offsite or Event with Ease! Let Offsite Handle Everything – From Location
               Scouting to Activity Planning, We Have Got You Covered.
             </p>
             <div className="flex items-center gap-6">
@@ -46,23 +46,29 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <div className="grid grid-cols-1 gap-4">
+            <div className="grid grid-cols-2 gap-4">
               {[
                 {
                   image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800',
-                  title: 'Team Dinner',
-                  location: 'Diefrutar Restaurant'
+                  title: 'Office Conference',
+                  location: 'Diefrutar Hotel'
                 },
                 {
-                  image: 'https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=800',
-                  title: 'Cocktail Reception',
-                  location: 'Almanac Hotel Barcelona'
+                  image: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800',
+                  title: 'Wedding Reception',
+                  location: 'Grand Plaza Hotel'
+                },
+                {
+                  image: 'https://images.unsplash.com/photo-1464349153735-7db50ed83c84?auto=format&fit=crop&w=800',
+                  title: 'Birthday Party',
+                  location: 'Skyline Lounge'
                 },
                 {
                   image: 'https://images.unsplash.com/photo-1582653291997-079a1c04e5a1?auto=format&fit=crop&w=800',
-                  title: 'Team Activity',
+                  title: 'Team Meetings',
                   location: 'Casa Batlló'
-                }
+                },
+                
               ].map((item, index) => (
                 <motion.div
                   key={index}
